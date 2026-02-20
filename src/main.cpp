@@ -21,8 +21,27 @@ const uint8_t IR_PIN = 2;
 /** @brief Variable to store IR sensor state */
 uint8_t irState = HIGH;
 
+/**
+ * @brief Arduino setup function
+ *
+ * Initializes serial communication,
+ * configures IR sensor pin, and prints
+ * system startup message.
+ */
 void setup() {
 
+    Serial.begin(9600);
+
+    while (!Serial) {
+        ; // Recommended for Uno R4
+    }
+
+    pinMode(IR_PIN, INPUT);
+
+    Serial.println("=================================");
+    Serial.println(" Embedded Obstacle Detection System ");
+    Serial.println(" IR Sensor Initialized ");
+    Serial.println("=================================");
 }
 
 void loop() {
