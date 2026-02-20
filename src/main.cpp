@@ -53,6 +53,9 @@ void loop() {
 
     irState = digitalRead(IR_PIN);
 
-    Serial.print("IR State: ");
-    Serial.println(irState);
+    if (irState == LOW) {
+        Serial.println("Obstacle Detected");
+    } else {
+        Serial.println("No Obstacle");
+    }
 }
