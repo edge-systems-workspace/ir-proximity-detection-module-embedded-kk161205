@@ -53,9 +53,18 @@ void loop() {
 
     irState = digitalRead(IR_PIN);
 
+    Serial.println("-----------------------------");
+
     if (irState == LOW) {
-        Serial.println("Obstacle Detected");
+        Serial.println("Status: OBSTACLE DETECTED");
     } else {
-        Serial.println("No Obstacle");
+        Serial.println("Status: CLEAR PATH");
     }
+
+    Serial.println("-----------------------------\n");
+
+    /**
+     * @brief Sampling delay (300 ms)
+     */
+    delay(300);
 }
