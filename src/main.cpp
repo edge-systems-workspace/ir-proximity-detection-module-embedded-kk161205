@@ -44,6 +44,15 @@ void setup() {
     Serial.println("=================================");
 }
 
+/**
+ * @brief Arduino main execution loop
+ *
+ * Reads digital IR sensor state and processes detection logic.
+ */
 void loop() {
 
+    irState = digitalRead(IR_PIN);
+
+    Serial.print("IR State: ");
+    Serial.println(irState);
 }
